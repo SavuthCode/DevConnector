@@ -20,7 +20,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     setFormdata({ ...formData, [e.target.name]: e.target.value });
   const onSubmit = async (e) => {
     e.preventDefault();
-
     if (password !== password2) {
       setAlert("Password do not match", "danger");
     } else {
@@ -76,6 +75,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             name="password2"
             value={password2}
             onChange={(e) => onChange(e)}
+            Appadmin_123
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />

@@ -1,12 +1,13 @@
-import React, { Fragment, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getPosts } from '../../../actions/post';
-import PropTypes from 'prop-types';
-import Spinner from '../layout/spinner';
-import PostItem from './PostItem';
-import PostForm from './PostForm';
+import React, { Fragment, useEffect } from "react";
+import { connect } from "react-redux";
+import { getPosts } from "../../../actions/post";
+import PropTypes from "prop-types";
+import Spinner from "../layout/spinner";
+import PostItem from "./PostItem";
+import PostForm from "./PostForm";
+import { ToastContainer } from "react-toastify";
 
-const Posts = ( { getPosts,post:{posts,loading} } ) => {
+const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
     getPosts();
   }, [getPosts]);
@@ -23,18 +24,16 @@ const Posts = ( { getPosts,post:{posts,loading} } ) => {
           <PostItem key={post._id} post={post} />
         ))}
       </div>
+      <ToastContainer />
     </Fragment>
   );
-}
+};
 
 Posts.propTypes = {
-  getPosts: PropTypes.func.isRequired
+  getPosts: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  post: state.post
+  post: state.post,
 });
-export default connect(mapStateToProps,{ getPosts })(Posts);
-
-
-
+export default connect(mapStateToProps, { getPosts })(Posts);

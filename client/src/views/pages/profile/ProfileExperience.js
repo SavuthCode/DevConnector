@@ -11,7 +11,7 @@ const ProfileExperience = ({
       {formatDate(from)} - {to ? formatDate(to) : 'Now'}
     </p>
     <p>
-      <strong>Position: </strong> {title}
+      <strong>Positione: </strong> {title}
     </p>
     <p>
       <strong>Location: </strong> {location}
